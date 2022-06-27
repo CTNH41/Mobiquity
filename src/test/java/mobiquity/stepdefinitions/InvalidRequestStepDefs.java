@@ -18,6 +18,8 @@ public class InvalidRequestStepDefs extends Base {
     public void the_user_sends_invalid_request(String invalidRequest) {
         response =given().accept(ContentType.JSON)
                 .when().get(baseUrl + invalidRequest);
+        Assert.assertEquals(response.contentType(),"application/json; charset=utf-8");
+
 
 
     }
