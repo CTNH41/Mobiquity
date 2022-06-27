@@ -1,5 +1,6 @@
 Feature:Search Delphine
 
+  @US-1
   Scenario Outline:Searching with username
 
     Given User send get request "<endPoint>"
@@ -9,10 +10,10 @@ Feature:Search Delphine
 
 
     Examples:
-      | endPoint | name               |
-      | users    | Delphine           |
-      | users    | marks              |
-      | users    | Leanne Graham      |
+      | endPoint | name     |
+      | users    | Delphine |
+      | users    | marks    |
+
 
 
 

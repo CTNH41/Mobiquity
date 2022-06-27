@@ -17,6 +17,9 @@ public class SearchWithPostsStepDefs extends Base {
     public void userSendsGetRequest(String endPoint) {
         response = given().accept(ContentType.JSON)
                 .when().get(baseUrl + endPoint);
+        Assert.assertEquals(response.contentType(),"application/json; charset=utf-8");
+        Assert.assertEquals(response.statusCode(),200);
+
 
     }
 
@@ -35,6 +38,8 @@ public class SearchWithPostsStepDefs extends Base {
         response = given().accept(ContentType.JSON)
                 .when().get(baseUrl + param + "?id=" + query);
 
+        Assert.assertEquals(response.contentType(),"application/json; charset=utf-8");
+        Assert.assertEquals(response.statusCode(),200);
         response.prettyPrint();
     }
 
