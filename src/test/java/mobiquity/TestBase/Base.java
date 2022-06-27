@@ -15,6 +15,7 @@ public class Base {
 
     public void verifyEmail (List <String> email){
 
+
         for (String emails : email) {
             System.out.println("email = " + emails);
             boolean validateEmail= EmailValidator.getInstance().isValid(emails);
