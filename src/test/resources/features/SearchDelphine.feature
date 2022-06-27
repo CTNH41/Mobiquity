@@ -12,7 +12,7 @@ Feature:Search Delphine
     Examples:
       | endPoint | name     |
       | users    | Delphine |
-      | users    | marks    |
+
 
 
 

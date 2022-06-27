@@ -49,13 +49,9 @@ public class SearchDelphineStepDefs extends Base {
         String respondBody=response.asString();
 
 
+ // todo assert contain
+        Assert.assertTrue(respondBody.contains(name));
 
-        if (respondBody.contains(name)) {
-
-            System.out.println(name + " is valid name");
-        }else{
-            System.err.println("This " + name + " is an invalid name ");
-        }
 
 
     }

@@ -35,7 +35,8 @@ public class VerifyEmailFormatStepDefs extends Base {
     @Then("User validates the email format")
     public void userValidatesTheEmailFormat() {
         JsonPath jsonPath = response.jsonPath();
-        jsonPath.getString("email");
+
+
         List<String> emails=jsonPath.getList("email" );
 
 
