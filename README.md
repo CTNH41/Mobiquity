@@ -51,7 +51,7 @@ Added Bonigarcia Dependency Automated driver management and Docker builder for S
 <version>4.1.0</version>
 </dependency>
 ```
-Add Cucumber java and junit for cucumber BDD
+Added Cucumber java and junit for cucumber BDD
 ```bash
 <dependency>
 <groupId>io.cucumber</groupId>
@@ -67,7 +67,7 @@ Add Cucumber java and junit for cucumber BDD
   </dependency>
   ```
 
-Add commons-validator Dependency for validate email format
+Added commons-validator Dependency for validate email format
   ```bash
    <dependency>
             <groupId>commons-validator</groupId>
