@@ -1,6 +1,6 @@
 Feature:Search Delphine
 
-  @US-1
+  @TC_API_001
   Scenario Outline:Searching with username
 
     Given User send get request "<endPoint>"

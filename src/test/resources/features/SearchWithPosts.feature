@@ -1,7 +1,7 @@
 Feature: Search with Posts
 
 
-@Us-2
+  @TC_API_002
   Scenario Outline:
     Given User send a get request "posts"
     Then Verify response body contain "<param>"

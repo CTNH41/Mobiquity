@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "mobiquity/stepdefinitions",
         dryRun = false
-//        tags = "@US-1"
+//      tags = "@TC_API_001"
 
 
 
