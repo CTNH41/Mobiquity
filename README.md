@@ -151,11 +151,13 @@ Feature:Search Delphine
       | endPoint | name     |
       | users    | Delphine |
 
+```
+```bash
 Feature: Search with Posts
 
 @Us-2 Scenario Outline:
-Given User send a get request "posts"
-Then Verify response body contain "<param>"
+    Given User send a get request "posts"
+    Then Verify response body contain "<param>"
 
     Examples:
       | param  |
@@ -173,12 +175,17 @@ Given User sets a new url "posts" "<idNumber>"
       | 7        | magnam facilis autem        |
       | 10       | optio molestias id quia eum |
       | 15       | eveniet quod temporibus     |
-
+```
+```bash
 Feature: Send comment request
 
-Scenario:Verify Email Format Given User sends get request "comments"
+Scenario:Verify Email Format 
+Given User sends get request "comments"
 Then User validates the email format
 
+```
+
+```bash
 Feature: Invalid Test Coverage @US-4 
 
 Scenario Outline: Negative Test Coverages 
@@ -194,7 +201,7 @@ Then Status code should be 404
     |todo            |
     |user            |
     ```
-
+```
 
 
 
