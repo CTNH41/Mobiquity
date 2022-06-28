@@ -1,42 +1,58 @@
-Cucumber BDD Framework
+#Cucumber/BDD Testing for REST APIs
 
-Git Clone :https://github.com/CTNH41/mobiquity.git
-To launch the API with root address http://localhost:3000/
+-Git Clone :https://github.com/CTNH41/mobiquity.git
+-To launch the API with root address http://localhost:3000/
+-Running with Docker
+
+## API Testing Vocabulary
+Flow To Be Tested
+
+-Search for the user with username"Delphine"
+-Use the details fetched to make a search for the posts written by the user
+-For each post, fetch the comments and validate if the emails in the comment section are in the proper format
+-think of various scenario for the test workflow, all the things that can go wrong.
+Add them to test coverage
 
 
-installation
+##Installation
 
-add Rest-Assured Dependency for API Test
+Added Rest-Assured Dependency for API Test
+```bash
 <dependency>
 <groupId>io.rest-assured</groupId>
 <artifactId>rest-assured</artifactId>
 <version>4.3.2</version>
 <scope>test</scope>
 </dependency>
-
-Add Gson Dependency Gson is a Java library that can be used to convert Java Objects into their JSON representation.
+```
+Added Gson Dependency Gson is a Java library that can be used to convert Java Objects into their JSON representation.
+```bash
 <dependency>
 <groupId>com.google.code.gson</groupId>
 <artifactId>gson</artifactId>
 <version>2.8.6</version>
 </dependency>
+```
 
-Add selenium Dependency for automation test
+Added selenium Dependency for automation test
+```bash
 <dependency>
 <groupId>org.seleniumhq.selenium</groupId>
 <artifactId>selenium-java</artifactId>
 <version>3.141.59</version>
 </dependency>
+```
 
-Add Bonigarcia Dependency Automated driver management and Docker builder for Selenium WebDriver
+Added Bonigarcia Dependency Automated driver management and Docker builder for Selenium WebDriver
+```bash
 <dependency>
 <groupId>io.github.bonigarcia</groupId>
 <artifactId>webdrivermanager</artifactId>
 <version>4.1.0</version>
 </dependency>
-
+```
 Add Cucumber java and junit for cucumber BDD
-
+```bash
 <dependency>
 <groupId>io.cucumber</groupId>
 <artifactId>cucumber-java</artifactId>
@@ -48,27 +64,79 @@ Add Cucumber java and junit for cucumber BDD
             <artifactId>cucumber-junit</artifactId>
              <version>5.7.0</version>
             <scope>test</scope>
-        </dependency>
-
+  </dependency>
+  ```
 
 Add commons-validator Dependency for validate email format
-
- <dependency>
+  ```bash
+   <dependency>
             <groupId>commons-validator</groupId>
             <artifactId>commons-validator</artifactId>
             <version>1.4.1</version>
-        </dependency>
+</dependency>
+```
+
+##Extending the vocabulary
+
+-Feature file contains the scenario which is written in Gherkin language.
+
+-Step definitions class is the translated version of scenario in Java language.
+
+-Runner classes which is related the feature files and corresponding step definitions classes to run the test code.
+CukesRunner
+```bash
+
+@RunWith(Cucumber.class)
+@CucumberOptions(
+        plugin = {"json:target/cucumber.json",
+                "html:target/default-html-reports"},
+        features = "src/test/resources/features",
+        glue = "mobiquity/stepdefinitions",
+        dryRun = false
+//      tags = "@TC_API_001"
+
+
+
+)
+public class CukesRunner {
+
+}
+```
+FailedCukesRunner
+```bash
+@RunWith(Cucumber.class)
+@CucumberOptions(
+
+
+        plugin={"html:target/failed-html-report"},
+        features = "src/test/resources/features",
+        glue = "mobiquity/stepdefinitions"
+
+
+)
+
+public class FailedTestRunner {
+}
+```
+-
+
+-Testbase is created to store common atribute, methods
+
+-Utilities/Configuration.Reader class to translate the key and values provided in the
+-Configuration.properties file into Java. These are the browser to interact, the web page to navigate and the login credentials to login.
+
+-My framework supports Data-Driven testing because of Scenario Outline annotation.
 
 
 
 
 
+
+##Examples
 
 Example for Mobiquity API Test at https://jsonplaceholder.typicode.com/.
 
-
-Examples
-
+```bash
 Feature:Search Delphine
 
 @US-1 Scenario Outline:Searching with username
@@ -96,7 +164,8 @@ Then Verify response body contain "<param>"
       | title  |
       | body   |
 
-Scenario Outline: Verify Specific idNumber Given User sets a new url "posts" "<idNumber>"
+Scenario Outline: Verify Specific idNumber 
+Given User sets a new url "posts" "<idNumber>"
 
     Then Verify specific "<bodyTitle>"
     Examples:
@@ -110,8 +179,11 @@ Feature: Send comment request
 Scenario:Verify Email Format Given User sends get request "comments"
 Then User validates the email format
 
-Feature: Invalid Test Coverage @US-4 Scenario Outline: Negative Test Coverages When the user sends invalid
-request "<invalidEndPoint>"
+Feature: Invalid Test Coverage @US-4 
+
+Scenario Outline: Negative Test Coverages 
+
+When the user sends invalid request "<invalidEndPoint>"
 Then Status code should be 404
 
     Examples: | invalidEndPoint|
@@ -121,26 +193,37 @@ Then Status code should be 404
     |photo           |
     |todo            |
     |user            |
+    ```
 
-Add a Cucumber Runner Class
 
-@RunWith(Cucumber.class)
-@CucumberOptions(
-plugin = {"json:target/cucumber.json",
-"html:target/default-html-reports"}, features = "src/test/resources/features", glue = "mobiquity/stepdefinitions",
-dryRun = false, tags = "@US-1"
-)
-public class CukesRunner {
 
-}
 
-Add .feature files under features folder In my .feature file I have access to all steps defined in the stepdefinitions
 
-Add step definition package I hold my codes in related class
 
-Add Test Base package Base class contains baseUrl object , respond object and method
 
-Add Utilities package ConfigurationReader class is created to read data which is in configuration.properties file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
