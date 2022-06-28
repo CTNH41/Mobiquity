@@ -1,4 +1,4 @@
-#Cucumber/BDD Testing for REST APIs
+# Cucumber/BDD Testing for REST APIs
 
 -Git Clone :https://github.com/CTNH41/mobiquity.git
 -To launch the API with root address http://localhost:3000/
@@ -14,7 +14,7 @@ Flow To Be Tested
 Add them to test coverage
 
 
-##Installation
+## Installation
 
 Added Rest-Assured Dependency for API Test
 ```bash
@@ -51,7 +51,7 @@ Added Bonigarcia Dependency Automated driver management and Docker builder for S
 <version>4.1.0</version>
 </dependency>
 ```
-Add Cucumber java and junit for cucumber BDD
+Added Cucumber java and junit for cucumber BDD
 ```bash
 <dependency>
 <groupId>io.cucumber</groupId>
@@ -67,7 +67,7 @@ Add Cucumber java and junit for cucumber BDD
   </dependency>
   ```
 
-Add commons-validator Dependency for validate email format
+Added commons-validator Dependency for validate email format
   ```bash
    <dependency>
             <groupId>commons-validator</groupId>
@@ -76,7 +76,7 @@ Add commons-validator Dependency for validate email format
 </dependency>
 ```
 
-##Extending the vocabulary
+## Extending the vocabulary
 
 -Feature file contains the scenario which is written in Gherkin language.
 
@@ -134,7 +134,7 @@ public class FailedTestRunner {
 
 
 
-##Examples
+## Examples
 
 Example for Mobiquity API Test at https://jsonplaceholder.typicode.com/.
 
