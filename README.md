@@ -83,7 +83,9 @@ Add commons-validator Dependency for validate email format
 -Step definitions class is the translated version of scenario in Java language.
 
 -Runner classes which is related the feature files and corresponding step definitions classes to run the test code.
-CukesRunner
+
+
+-CukesRunner
 ```bash
 
 @RunWith(Cucumber.class)
@@ -102,7 +104,7 @@ public class CukesRunner {
 
 }
 ```
-FailedCukesRunner
+-FailedCukesRunner
 ```bash
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -120,7 +122,7 @@ public class FailedTestRunner {
 ```
 -
 
--Testbase is created to store common atribute, methods
+-Testbase is created to store common attribute, methods
 
 -Utilities/Configuration.Reader class to translate the key and values provided in the
 -Configuration.properties file into Java. These are the browser to interact, the web page to navigate and the login credentials to login.
