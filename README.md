@@ -186,6 +186,7 @@ Then User validates the email format
 ```
 
 ```bash
+
 Feature: Invalid Test Coverage @US-4 
 
 Scenario Outline: Negative Test Coverages 
