@@ -1,5 +1,5 @@
 Feature: Invalid  Test Coverage
-  @US-4
+  @TC_API_004
   Scenario Outline: Negative Test Coverages
     When the user sends invalid request "<invalidEndPoint>"
     Then Status code should be 404
