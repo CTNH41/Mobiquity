@@ -2,7 +2,8 @@
 
 -Git Clone :https://github.com/CTNH41/mobiquity.git
 -To launch the API with root address http://localhost:3000/
--Running with Docker
+-Be sure that you have run docker compose before test framework run since this framework is testing 
+ the API which is running on localhost:3000
 
 ## API Testing Vocabulary
 Flow To Be Tested
