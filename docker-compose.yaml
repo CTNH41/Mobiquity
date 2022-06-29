@@ -3,7 +3,7 @@ services:
  myjsonplaceholder:
     image: hltdockerhub/jsonplaceholder:01
     ports:
-      - 3002:3000
+      - 3000:3000
     restart: unless-stopped
 
     networks:
