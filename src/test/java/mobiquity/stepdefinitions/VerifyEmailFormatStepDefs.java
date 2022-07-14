@@ -19,7 +19,7 @@ public class VerifyEmailFormatStepDefs extends Base {
 
         response = given().accept(ContentType.JSON)
                 .when().get(baseUrl + endPoint);
-        Assert.assertEquals("Status code is verified", 200, "application/json; charset=utf-8");
+        Assert.assertEquals("Status code is verified", 200, response.statusCode());
         Assert.assertEquals("ContentType is Json","application/json; charset=utf-8", response.contentType() );
 
 
