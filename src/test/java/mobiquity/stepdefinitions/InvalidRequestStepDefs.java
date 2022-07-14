@@ -27,7 +27,7 @@ public class InvalidRequestStepDefs extends Base {
     @Then("Status code should be {int}")
     public void status_code_should_be(int statusCode) {
 
-        Assert.assertEquals("Status code is verified",statusCode,response.statusCode());
+        Assert.assertEquals("Status code is as expected",statusCode,response.statusCode());
 
 
     }

@@ -4,6 +4,9 @@
 -To launch the API with root address http://localhost:3000/
 -Be sure that you have run docker compose before test framework run since this framework is testing 
  the API which is running on localhost:3000
+- To Run Test cases- maven--> click clean --> click install
+- To Run Separate Test Cases -->click run button in same line with Test Methods
+- Run 'mvn clean install' in terminal
 
 ## API Testing Vocabulary
 Flow To Be Tested
@@ -206,7 +209,8 @@ Then Status code should be 404
     |user            |
     ```
 ```
-
+##Help
+In case you have a question contact ( halit.chetin@gmail.com )
 
 
 

@@ -3,6 +3,7 @@ package mobiquity.testBase;
 import io.restassured.response.Response;
 import mobiquity.utilities.ConfigurationReader;
 import org.apache.commons.validator.routines.EmailValidator;
+import org.junit.Assert;
 
 import java.util.List;
 
@@ -15,13 +16,17 @@ public class Base {
 
 
         for (String emails : email) {
-            System.out.println("email = " + emails);
+
             boolean validateEmail= EmailValidator.getInstance().isValid(emails);
             if(validateEmail) {
-                System.out.println("valid = " + validateEmail);
+
+                Assert.assertTrue("valid email",validateEmail);
+                System.out.println("valid email format = " + emails);
 
             }else {
-                System.err.println("invalid" + validateEmail );
+                Assert.assertFalse("invalid email",validateEmail);
+                System.out.println("invalid email format = " + validateEmail);
+
             }
         }
 
