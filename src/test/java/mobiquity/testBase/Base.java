@@ -1,10 +1,8 @@
-package mobiquity.TestBase;
+package mobiquity.testBase;
 
-import io.cucumber.java.bs.A;
 import io.restassured.response.Response;
 import mobiquity.utilities.ConfigurationReader;
 import org.apache.commons.validator.routines.EmailValidator;
-import org.junit.Assert;
 
 import java.util.List;
 

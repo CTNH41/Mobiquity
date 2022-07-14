@@ -10,4 +10,4 @@ COPY . .
 ENTRYPOINT ["mvn","test"]
   ## Run the web service on container startup.
 #CMD ["java","-Dcom.sun.net.ssl.checkRevocation=false","-Dserver.port=8080","-jar","mobiquity.jar"]
-#ARG JAR_FILE=target/*.jar
+#ARG JAR_FIyLE=target/*.jar

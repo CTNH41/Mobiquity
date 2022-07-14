@@ -3,9 +3,7 @@ package mobiquity.stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import mobiquity.TestBase.Base;
-import mobiquity.utilities.ConfigurationReader;
+import mobiquity.testBase.Base;
 import org.junit.Assert;
 
 import static io.restassured.RestAssured.*;
@@ -17,8 +15,8 @@ public class SearchWithPostsStepDefs extends Base {
     public void userSendsGetRequest(String endPoint) {
         response = given().accept(ContentType.JSON)
                 .when().get(baseUrl + endPoint);
-        Assert.assertEquals(response.contentType(),"application/json; charset=utf-8");
-        Assert.assertEquals(response.statusCode(),200);
+        Assert.assertEquals("ContentType is Json",response.contentType(),"application/json; charset=utf-8");
+        Assert.assertEquals("Status code is verified",response.statusCode(),200);
 
 
     }
@@ -26,7 +24,7 @@ public class SearchWithPostsStepDefs extends Base {
 
     @Then("Verify response body contain {string}")
     public void verify_response_body_contain(String param) {
-        Assert.assertTrue(response.asString().contains(param));
+        Assert.assertTrue("Response body is as expected",response.asString().contains(param));
 
 
     }
@@ -38,8 +36,6 @@ public class SearchWithPostsStepDefs extends Base {
         response = given().accept(ContentType.JSON)
                 .when().get(baseUrl + param + "?id=" + query);
 
-        Assert.assertEquals(response.contentType(),"application/json; charset=utf-8");
-        Assert.assertEquals(response.statusCode(),200);
         response.prettyPrint();
     }
 
@@ -48,7 +44,7 @@ public class SearchWithPostsStepDefs extends Base {
     public void verify_specific(String bodyTitle) {
 
         System.out.println("============================================");
-        Assert.assertTrue(response.asString().contains(bodyTitle));
+        Assert.assertTrue("Body title is as expected",response.asString().contains(bodyTitle));
 
 
     }
