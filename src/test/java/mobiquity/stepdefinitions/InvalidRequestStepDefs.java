@@ -2,6 +2,7 @@ package mobiquity.stepdefinitions;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import mobiquity.testBase.Base;
 import org.junit.Assert;
 
@@ -9,7 +10,7 @@ import static io.restassured.RestAssured.*;
 
 public class InvalidRequestStepDefs extends Base {
 
-
+    private Response response;
 
     @When("the user sends invalid request {string}")
     public void the_user_sends_invalid_request(String invalidRequest) {
