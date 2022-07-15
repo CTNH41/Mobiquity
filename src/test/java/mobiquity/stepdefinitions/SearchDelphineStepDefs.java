@@ -2,14 +2,14 @@ package mobiquity.stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import mobiquity.testBase.Base;
 import org.junit.Assert;
-
 import static io.restassured.RestAssured.*;
 
 public class SearchDelphineStepDefs extends Base {
 
-
+    private Response response;
 
     @Given("User send get request {string}")
     public void userSendGetRequest(String endPoint) {
