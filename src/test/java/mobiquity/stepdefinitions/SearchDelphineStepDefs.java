@@ -5,6 +5,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import mobiquity.testBase.Base;
 import org.junit.Assert;
+
 import static io.restassured.RestAssured.*;
 
 public class SearchDelphineStepDefs extends Base {
@@ -30,8 +31,6 @@ public class SearchDelphineStepDefs extends Base {
     @Then("Content type should be {string}")
     public void content_type_should_be(String expectedContentType) {
         String actualContentType=response.contentType();
-
-
         Assert.assertEquals("ContentType is verified",expectedContentType,actualContentType);
 
 

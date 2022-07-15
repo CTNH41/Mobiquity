@@ -5,11 +5,12 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import mobiquity.testBase.Base;
 import org.junit.Assert;
+
 import static io.restassured.RestAssured.*;
 
 public class InvalidRequestStepDefs extends Base {
-    private Response response;
 
+ private Response response;
 
     @When("the user sends invalid request {string}")
     public void the_user_sends_invalid_request(String invalidRequest) {

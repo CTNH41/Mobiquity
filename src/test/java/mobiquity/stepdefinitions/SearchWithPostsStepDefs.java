@@ -1,18 +1,17 @@
 package mobiquity.stepdefinitions;
 
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import mobiquity.testBase.Base;
 import org.junit.Assert;
+
 import static io.restassured.RestAssured.*;
 
-
 public class SearchWithPostsStepDefs extends Base {
-
     private Response response;
+
     @Given("User send a get request {string}")
     public void userSendsGetRequest(String endPoint) {
         response = given().accept(ContentType.JSON)
@@ -45,7 +44,7 @@ public class SearchWithPostsStepDefs extends Base {
     @Then("Verify specific {string}")
     public void verify_specific(String bodyTitle) {
 
-
+        System.out.println("============================================");
         Assert.assertTrue("Body title is as expected",response.asString().contains(bodyTitle));
 
 
