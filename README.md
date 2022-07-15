@@ -1,8 +1,9 @@
 # Cucumber/BDD Testing for REST APIs
 
-- Git Clone :https://github.com/CTNH41/mobiquity.git
-- To launch the API with root address http://localhost:3000/
-- Be sure that you have run docker compose before test framework run since this framework is testing the API which is running on localhost:3000
+-Git Clone :https://github.com/CTNH41/mobiquity.git
+-To launch the API with root address http://localhost:3000/
+-Be sure that you have run docker compose before test framework run since this framework is testing 
+ the API which is running on localhost:3000
 - To Run Test cases- maven--> click clean --> click install
 - To Run Separate Test Cases -->click run button in same line with Test Methods
 - Run 'mvn clean install' in terminal
@@ -10,15 +11,16 @@
 ## API Testing Vocabulary
 Flow To Be Tested
 
-- Search for the user with username"Delphine".
-- Use the details fetched to make a search for the posts written by the user.
-- For each post, fetch the comments and validate if the emails in the comment section are in the proper format. 
-- Think of various scenario for the test workflow, all the things that can go wrong. Add them to test coverage.
+-Search for the user with username"Delphine"
+-Use the details fetched to make a search for the posts written by the user
+-For each post, fetch the comments and validate if the emails in the comment section are in the proper format
+-think of various scenario for the test workflow, all the things that can go wrong.
+Add them to test coverage
 
 
 ## Installation
 
-- Added Rest-Assured Dependency for API Test
+Added Rest-Assured Dependency for API Test
 ```bash
 <dependency>
 <groupId>io.rest-assured</groupId>
@@ -27,9 +29,16 @@ Flow To Be Tested
 <scope>test</scope>
 </dependency>
 ```
+Added Gson Dependency Gson is a Java library that can be used to convert Java Objects into their JSON representation.
+```bash
+<dependency>
+<groupId>com.google.code.gson</groupId>
+<artifactId>gson</artifactId>
+<version>2.8.6</version>
+</dependency>
+```
 
-
-- Added selenium Dependency for automation test
+Added selenium Dependency for automation test
 ```bash
 <dependency>
 <groupId>org.seleniumhq.selenium</groupId>
@@ -38,6 +47,14 @@ Flow To Be Tested
 </dependency>
 ```
 
+Added Bonigarcia Dependency Automated driver management and Docker builder for Selenium WebDriver
+```bash
+<dependency>
+<groupId>io.github.bonigarcia</groupId>
+<artifactId>webdrivermanager</artifactId>
+<version>4.1.0</version>
+</dependency>
+```
 Added Cucumber java and junit for cucumber BDD
 ```bash
 <dependency>
@@ -65,14 +82,14 @@ Added commons-validator Dependency for validate email format
 
 ## Extending the vocabulary
 
-- Feature file contains the scenario which is written in Gherkin language.
+-Feature file contains the scenario which is written in Gherkin language.
 
-- Step definitions class is the translated version of scenario in Java language.
+-Step definitions class is the translated version of scenario in Java language.
 
-- Runner classes which is related the feature files and corresponding step definitions classes to run the test code.
+-Runner classes which is related the feature files and corresponding step definitions classes to run the test code.
 
 
-- CukesRunner
+-CukesRunner
 ```bash
 
 @RunWith(Cucumber.class)
@@ -91,7 +108,7 @@ public class CukesRunner {
 
 }
 ```
-- FailedCukesRunner
+-FailedCukesRunner
 ```bash
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -107,14 +124,14 @@ public class CukesRunner {
 public class FailedTestRunner {
 }
 ```
-- 
+-
 
-- testBase is created to store common attribute, methods
+-Testbase is created to store common attribute, methods
 
-- Utilities/Configuration.Reader class to translate the key and values provided in the
-- Configuration.properties file into Java. These are the browser to interact, the web page to navigate and the login credentials to login.
+-Utilities/Configuration.Reader class to translate the key and values provided in the
+-Configuration.properties file into Java. These are the browser to interact, the web page to navigate and the login credentials to login.
 
-- My framework supports Data-Driven testing because of Scenario Outline annotation.
+-My framework supports Data-Driven testing because of Scenario Outline annotation.
 
 
 

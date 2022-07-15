@@ -4,7 +4,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
 import mobiquity.testBase.Base;
 import org.junit.Assert;
 
@@ -13,7 +12,7 @@ import java.util.List;
 import static io.restassured.RestAssured.*;
 
 public class VerifyEmailFormatStepDefs extends Base {
-    private Response response;
+
 
     @Given("User sends get request {string}")
     public void user_sends_get_request(String endPoint) {

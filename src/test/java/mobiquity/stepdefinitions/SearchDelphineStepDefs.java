@@ -5,7 +5,6 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import mobiquity.testBase.Base;
 import org.junit.Assert;
-
 import static io.restassured.RestAssured.*;
 
 public class SearchDelphineStepDefs extends Base {

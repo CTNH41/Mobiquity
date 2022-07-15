@@ -3,21 +3,20 @@ package mobiquity.stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 import mobiquity.testBase.Base;
 import org.junit.Assert;
 
 import static io.restassured.RestAssured.*;
 
 public class SearchWithPostsStepDefs extends Base {
-    private Response response;
+
 
     @Given("User send a get request {string}")
     public void userSendsGetRequest(String endPoint) {
         response = given().accept(ContentType.JSON)
                 .when().get(baseUrl + endPoint);
-        Assert.assertEquals("ContentType is Json","application/json; charset=utf-8",response.contentType());
-        Assert.assertEquals("Status code is verified",200,response.statusCode());
+        Assert.assertEquals("ContentType is Json",response.contentType(),"application/json; charset=utf-8");
+        Assert.assertEquals("Status code is verified",response.statusCode(),200);
 
 
     }
