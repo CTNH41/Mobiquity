@@ -15,7 +15,7 @@ public class Base {
         List<Boolean> collect = emailList.stream().map(eachEmail ->
                 EmailValidator.getInstance().isValid(eachEmail)).toList();
 
-        Assert.assertFalse("", collect.contains(false));
+        Assert.assertFalse("Email verification is", collect.contains(false));
 
 
     }
