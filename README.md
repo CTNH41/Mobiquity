@@ -1,9 +1,13 @@
 # Cucumber/BDD Testing for REST APIs
 
 -Git Clone :https://github.com/CTNH41/mobiquity.git
--To launch the API with root address http://localhost:3000/
--Be sure that you have run docker compose before test framework run since this framework is testing 
- the API which is running on localhost:3000
+-
+
+- be sure that on your  computer docker is installed and running
+- first run ' docker container run -d -p 3000:3000 hltdockerhub/jsonplaceholder:01 ' in terminal
+- To launch the API with root address http://localhost:3000/
+
+- the API which is running on localhost:3000
 - To Run Test cases- maven--> click clean --> click install
 - To Run Separate Test Cases -->click run button in same line with Test Methods
 - Run 'mvn clean install' in terminal
