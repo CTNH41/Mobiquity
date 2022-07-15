@@ -19,7 +19,7 @@ public class InvalidRequestStepDefs extends Base {
 
         String expectedContentType="application/json; charset=utf-8";
         String actualContentType=response.contentType();
-        Assert.assertEquals("ContentType is verified",expectedContentType,actualContentType);
+        Assert.assertEquals("Content Type is verified",expectedContentType,actualContentType);
 
 
 
